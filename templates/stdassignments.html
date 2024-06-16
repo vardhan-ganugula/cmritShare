@@ -105,7 +105,7 @@
             <table class="table overflow-hidden table-hover table-dark">
                 <thead>
                     <tr>
-                        <th scope="col" colspan="8"> <i class="fa-regular fa-file-lines ms-2 me-3"></i>
+                        <th scope="col" colspan="9"> <i class="fa-regular fa-file-lines ms-2 me-3"></i>
                             <span>Assignments</span>
                         </th>
 
@@ -115,10 +115,11 @@
                         <th scope="col">Asignment Name</th>
                         <th scope="col">Subject</th>
                         <th scope="col">Teacher</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Questions</th>
                         <th scope="col">Submission Date</th>
-                        <th scope="col">Marks</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Upload</th>
+                        <th scope="col">Marks</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -128,6 +129,10 @@
                         <td>{{i['assname']}}</td>
                         <th scope="row">{{i['subject']}}</th>
                         <td>{{i['teachername']}}</td>
+                        <td>
+                            <a href="/static/questions/{{i['questions']}}" download class="btn btn-info btn-sm text-light">Download</a>
+                        </td>
+                        <td>{{i['date']}}</td>
                         <td>
                             {%if i['status']==1%}
                             <div class="status-outside">
@@ -143,7 +148,6 @@
                             </div>
                             {%endif%}
                         </td>
-                        <td>{{i['date']}}</td>
                         <td>{{i['marks']}}</td>
                         <td>
                             {%if i['status']==1%}
